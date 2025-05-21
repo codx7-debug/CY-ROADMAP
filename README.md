@@ -9,7 +9,7 @@ We will start with a networking course, build solid knowledge step-by-step, and 
 
 
 # If u are a beginner I recommend
--CompTIA A+ (to learn ur pc )[]
+-CompTIA A+ (to learn about ur pc )[]
 
 # if not
 
