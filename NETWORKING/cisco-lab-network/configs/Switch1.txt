@@ -1,1 +1,43 @@
+enable
+configure terminal
 
+! -------------------------
+! Create VLANs
+! -------------------------
+
+vlan 30
+ name USER
+exit
+
+vlan 40
+ name SERVER
+exit
+
+
+
+interface range fa0/1 - 12
+ switchport mode access
+ switchport access vlan 30
+exit
+
+interface range fa0/13 - 24
+ switchport mode access
+ switchport access vlan 40
+exit
+
+! -------------------------
+! Configure Trunk Port
+! (Change interface if needed)
+! -------------------------
+
+interface fa0/1
+ switchport mode trunk
+ no shutdown
+exit
+
+! -------------------------
+! Save Configuration
+! -------------------------
+
+end
+write memory
