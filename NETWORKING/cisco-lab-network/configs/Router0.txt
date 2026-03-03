@@ -1,1 +1,45 @@
+enable
+configure terminal
 
+! -------------------------
+! Enable Physical Interfaces
+! -------------------------
+
+interface GigabitEthernet0/0/0
+ no shutdown
+exit
+
+interface GigabitEthernet0/0/1
+ no shutdown
+exit
+
+! -------------------------
+! Subinterfaces for Switch0 (VLAN 10 & 20)
+! -------------------------
+
+interface GigabitEthernet0/0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+exit
+
+interface GigabitEthernet0/0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+exit
+
+! -------------------------
+! Subinterfaces for Switch1 (VLAN 30 & 40)
+! -------------------------
+
+interface GigabitEthernet0/0/1.30
+ encapsulation dot1Q 30
+ ip address 192.168.30.1 255.255.255.0
+exit
+
+interface GigabitEthernet0/0/1.40
+ encapsulation dot1Q 40
+ ip address 192.168.40.1 255.255.255.0
+exit
+
+end
+write memory
